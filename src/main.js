@@ -25,7 +25,7 @@ const sizes = {
 } 
 
 // Create a light to get the visibility of the object
-const light = new THREE.PointLight(0xffffff,5,100);
+const light = new THREE.PointLight(0xffffff,20,100);
 light.position.set(0,5,5);
 scene.add(light);
 
@@ -44,3 +44,25 @@ const renderer = new THREE.WebGLRenderer({canvas});
 renderer.setSize(sizes.width,sizes.height);
 
 renderer.render(scene,camera);
+
+
+
+//Resize Listener
+window.addEventListener('resize',()=>{
+    // Update sizes
+    sizes.width = window.innerWidth;
+    sizes.height = window.innerHeight;
+
+    //Update camera
+    camera.aspect = sizes.width/sizes.height;
+    renderer.setSize(sizes.width,sizes.height);
+
+    //Update ball
+    camera.updateProjectionMatrix();
+});
+
+const loop = () => {
+    requestAnimationFrame(loop);
+    renderer.render(scene,camera);
+}
+loop();
