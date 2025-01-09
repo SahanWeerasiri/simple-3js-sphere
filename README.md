@@ -27,12 +27,12 @@ Ensure you have the following installed on your machine:
 
 1. **Clone the Repository:**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/SahanWeerasiri/simple-3js-sphere.git
    ```
 
 2. **Navigate to the Project Directory:**
    ```bash
-   cd <project-directory>
+   cd simple-3js-sphere
    ```
 
 3. **Install Dependencies:**
